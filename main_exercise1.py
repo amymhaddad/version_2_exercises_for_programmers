@@ -6,7 +6,7 @@ Created on Thu May 10 15:34:22 2018
 @author: amyhaddad
 """
 
-from exercise1 import print_greeting
+from exercise1 import generate_greeting
 
 def main():
     """Get input from user and print a greeting"""
@@ -15,7 +15,7 @@ def main():
     user_name = input("What is your name? ")
 
     # call function
-    user_greeting = print_greeting(user_name)
+    user_greeting = generate_greeting(user_name)
 
     # coordinate output
     print(user_greeting)
