@@ -12,7 +12,7 @@ from exercise1 import generate_greeting
 class GreetUserTest(unittest.TestCase):
     """Test greeting"""
 
-    def test_greeting(self):
+    def test_generate_greeting(self):
         """Test if greeting returns user's name with a greeting"""
 
         name = "amy"
