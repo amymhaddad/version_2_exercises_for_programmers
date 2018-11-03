@@ -12,8 +12,8 @@ def calculate_room_measurement_feet(length, width):
     area = length * width
     return area
 
-def convert_feet_to_meters(dimensions):
+def convert_feet_to_meters(dimensions, FEET_TO_METERS_CONVERSION):
     """Convert the dimensions from feet to meters"""
 
-    square_meters = float(dimensions) * 0.09290304
+    square_meters = float(dimensions) * FEET_TO_METERS_CONVERSION
     return square_meters
