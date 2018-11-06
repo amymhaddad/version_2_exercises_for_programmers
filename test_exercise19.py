@@ -17,7 +17,9 @@ class TestBmi(unittest.TestCase):
 
         height = 64
         weight = 128
+        
         bmi = calculate_bmi(weight, height)
+        
         self.assertEqual(bmi, 21.96875)
 
 if __name__ == '__main__':
