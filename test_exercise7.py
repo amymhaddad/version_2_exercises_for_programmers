@@ -12,6 +12,7 @@ from exercise7 import calculate_room_measurement_feet, convert_feet_to_meters
 class RoomCalculationsTest(unittest.TestCase):
     """Calculations to get area of room"""
 
+    FEET_TO_METERS_CONVERSION = 0.09290304
 
     def test_room_measure_feet(self):
         """Test to get room measurement in feet"""
@@ -26,10 +27,9 @@ class RoomCalculationsTest(unittest.TestCase):
     def test_feet_to_meters(self):
         """Test to convert feet to meters"""
 
-        FEET_TO_METERS_CONVERSION = 0.09290304
         dimensions = 300
 
-        room_from_feet_to_meters = convert_feet_to_meters(dimensions, FEET_TO_METERS_CONVERSION)
+        room_from_feet_to_meters = convert_feet_to_meters(dimensions)
 
         self.assertEqual(room_from_feet_to_meters, 27.870912)
 
