@@ -11,11 +11,11 @@ LIST_OF_NUMBERS = list(range(0, 11))
 def create_multiplication_table(numbers):
     """Create a table with numbers and product"""
 
-    totals = []
+    total_products = []
     for number in numbers:
         for digit in LIST_OF_NUMBERS:
             product = number * digit
             total = f"{number} * {digit} = {product}"
-            totals.append(total)
+            total_products.append(total)
 
-    return totals
+    return total_products
