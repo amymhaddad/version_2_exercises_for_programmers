@@ -6,22 +6,28 @@ Created on Thu May 10 15:34:22 2018
 @author: amyhaddad
 """
 
+#Iteration 1:
 import csv
+from collections import OrderedDict
 
-filename = 'text_file.txt'
+filename = 'text_file.csv'
 
-string_of_words = ''
-
-with open(filename, newline='') as csvfile:
-    linereader = csv.reader(csvfile, delimiter=' ')
+with open(filename, newline ='') as csvfile:
+    linereader = csv.reader(csvfile, delimiter=',')
+    string_of_words = ''
     for rows in linereader:
         for row in rows:
             string_of_words += row + ' '
             list_of_words = string_of_words.split()
 
-unique_words = set(list_of_words)
+    unique_words = set(list_of_words)
 
-for word in unique_words:
-    frequency = string_of_words.count(word)
-    final_output = f"{word}: {frequency}\n"
-    print(final_output.strip())
+    frequency_tracker = {}
+    for word in unique_words:
+        if word in list_of_words:
+            frequency = list_of_words.count(word)
+            frequency_tracker[word] = frequency
+
+    sorted_dictionary = sorted(frequency_tracker.items(), key=lambda t: t[1], reverse=True)
+    for item in sorted_dictionary:
+        print(f"{item[0]}: {item[1]}")
