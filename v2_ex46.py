@@ -6,7 +6,6 @@ Created on Thu May 10 15:34:22 2018
 @author: amyhaddad
 """
 
-#Iteration 1:
 import csv
 from collections import OrderedDict
 
@@ -28,14 +27,14 @@ with open(filename, newline ='') as csvfile:
             frequency = list_of_words.count(word)
             frequency_tracker[word] = frequency
 
-    sorted_dictionary = sorted(frequency_tracker.items(), key=lambda t: t[1], reverse=True)
-    for item in sorted_dictionary:
-        print(f"{item[0]}: {item[1]}")
+    frequencies = OrderedDict(sorted(frequency_tracker.items(), key=lambda t: t[1], reverse=True))
 
-        
-        
-        
-        
+    for word, count in frequencies.items():
+        astericks = '*' * count
+        print(f"{word}: {astericks}")
+
+
+#########
 #Iteration 2:
 
 import csv
@@ -55,8 +54,6 @@ with open(filename, newline='') as csvfile:
 
     frequently_used_words_with_counter = [f"{word}: {count}" for word, count in counters]
 
-    formatted_word_frequency = ''
-    for word in frequently_used_words_with_counter:
-        formatted_word_frequency += word + '\n'
-
-    print(formatted_word_frequency)
+    for word, number in counters:
+        astericks = '*' * number
+        print(f"{word}: {astericks}")
