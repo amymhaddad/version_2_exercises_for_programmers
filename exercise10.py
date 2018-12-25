@@ -35,7 +35,6 @@ def convert_tax_to_decimal(TAX_RATE):
 
 def calculate_total_tax_for_items(TAX_RATE, sum_of_subtotals):
     """Calculate the total tax: tax rate as decimal * sum of the subtotals"""
-    #I could call convert_tax_to_decimal and add this to my parameter, instead of re-calculating it below.
 
     tax_rate_as_decimal = convert_tax_to_decimal(TAX_RATE)
 
