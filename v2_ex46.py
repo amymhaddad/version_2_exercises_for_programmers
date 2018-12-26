@@ -48,8 +48,8 @@ with open(filename, newline='') as csvfile:
             string_of_words += row + ' '
             list_of_words = string_of_words.split()
 
-    counters = Counter(list_of_words).most_common()
+    word_frequency_counter = Counter(list_of_words).most_common()
 
-    for word, number in counters:
+    for word, number in word_frequency_counter:
         astericks = '*' * number
         print(f"{word}: {astericks}")
