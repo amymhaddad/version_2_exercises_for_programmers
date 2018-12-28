@@ -21,27 +21,27 @@ def get_subtotal(price, quantity):
     return price * quantity
 
 
-def calculate_sum_of_subtotals(subtotal_item1, subtotal_item2, subtotal_item3):
+def sum_of_subtotals(*subtotals):
     """Add all subtotals together to get sum of subtotals"""
 
-    return subtotal_item1 + subtotal_item2 + subtotal_item3
+    totals = [subtotal for subtotal in subtotals]
+
+    return sum(totals)
 
 
-def convert_tax_to_decimal(TAX_RATE):
+def convert_tax_to_decimal(tax_rate):
     """Convert given tax rate to a decimal"""
 
-    return TAX_RATE / 100
+    return tax_rate / 100
 
 
-def calculate_total_tax_for_items(TAX_RATE, sum_of_subtotals):
+def total_tax_for_multiple_items(tax_rate_as_decimal, subtotals_sum):
     """Calculate the total tax: tax rate as decimal * sum of the subtotals"""
 
-    tax_rate_as_decimal = convert_tax_to_decimal(TAX_RATE)
-
-    return tax_rate_as_decimal * sum_of_subtotals
+    return tax_rate_as_decimal * subtotals_sum
 
 
-def calculate_grand_total(total_tax_for_items, sum_of_subtotals):
+def grand_total(total_tax_multiple_items, subtotals_sum):
     """Find grand total: tax plus sum of subtotals for items"""
 
-    return total_tax_for_items + sum_of_subtotals
+    return total_tax_multiple_items + subtotals_sum
